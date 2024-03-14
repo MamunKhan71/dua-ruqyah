@@ -2,6 +2,7 @@ import './App.css'
 import Categories from './components/Categories'
 import MainContent from './components/MainContent'
 import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
         <Navbar></Navbar>
         <Categories></Categories>
         <MainContent></MainContent>
+        <Sidebar></Sidebar>
       </div>
     </>
   )
