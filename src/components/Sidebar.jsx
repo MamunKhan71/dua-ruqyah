@@ -1,12 +1,7 @@
 const Sidebar = () => {
     return (
         <div className="w-96 rounded-xl flex flex-col items-end gap-7">
-            <div className="flex gap-4 items-center">
-                <img src="profile.png" alt="" />
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" fill="none">
-                    <path d="M5.79241 5.97063C5.3921 6.49064 4.6079 6.49064 4.20759 5.97063L1.04322 1.85999C0.537025 1.20243 1.00579 0.25 1.83563 0.25L8.16437 0.250001C8.99421 0.250001 9.46298 1.20243 8.95678 1.86L5.79241 5.97063Z" fill="#868686" />
-                </svg>
-            </div>
+
             <div className="bg-white px-5 pt-8 w-full space-y-4 rounded-[32px]">
                 <h1 className="text-center font-bold text-xl">Settings</h1>
                 <div className="flex flex-col gap-4">

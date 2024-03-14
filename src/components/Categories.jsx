@@ -1,7 +1,6 @@
 const Categories = () => {
     return (
         <div className="max-w-96 space-y-3">
-            <h1 className="font-2xl font-semibold">Dua Page</h1>
             <div className="bg-white rounded-t-xl flex flex-col">
                 <div className="bg-[#1FA45B] rounded-t-xl py-4 px-32">
                     <p className="text-white font-semibold">Categories</p>
