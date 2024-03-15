@@ -8,9 +8,8 @@ const MainContent = ({ currentCat }) => {
     useEffect(() => {
         fetch('dua.json')
             .then(res => res.json())
-            .then(data => setContent(data))
+            .then(data => setContent(data));
     }, [])
-
     const togglePlay = () => {
         if (!isPlaying) {
             audioReference.current.play();

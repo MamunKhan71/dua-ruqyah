@@ -3,7 +3,6 @@ import { Transition } from '@headlessui/react'
 const Categories = ({ catShow }) => {
     const [category, setCategory] = useState([]);
     const [subCategory, setSubCategory] = useState([]);
-
     useEffect(() => {
         fetch('category.json')
             .then(res => res.json())
@@ -71,18 +70,20 @@ const Categories = ({ catShow }) => {
                                                 <ul className="list-disc list-inside font-medium">
                                                     {subCategory
                                                         .filter(SubCat => SubCat.cat_id === visibleCat)
-                                                        .map(gCat => (
-                                                            <li key={gCat.subcat_id}>{gCat.subcat_name_en}</li>
-                                                        ))}
+                                                        .map(gCat => {
+                                                            return (
+                                                                <li key={gCat.subcat_id}>{gCat.subcat_name_en}
+                                                                </li>
+                                                            )
+                                                        })}
                                                 </ul>
                                             </div>
                                         </Transition>
                                     }
-                                    
+
                                 </>
                             ))
                         }
-
 
                     </div>
                 </div>

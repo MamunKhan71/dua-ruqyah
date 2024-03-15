@@ -7,7 +7,14 @@ import Sidebar from './components/Sidebar'
 import TopNav from './components/TopNav'
 
 function App() {
-  const [currentCat, setCurrentCat] = useState(1)
+  const [currentCat, setCurrentCat] = useState(1);
+  const [getDoa, setDoa] = useState([]);
+
+  const handleDoa = doa =>{
+    setDoa(doa);
+  }
+
+
   const catShow = catId => {
     setCurrentCat(catId);
   }
