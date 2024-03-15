@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import PlayAudio from "./PlayAudio";
-const MainContent = () => {
+const MainContent = ({ currentCat }) => {
     const [contents, setContent] = useState([]);
     const [isPlaying, setPlaying] = useState(false);
     const audioReference = React.useRef(null);
@@ -25,7 +25,8 @@ const MainContent = () => {
                 <p className="w-full"><span className="text-[#1FA45B]">Section</span> The Servant dependent on his lord</p>
             </div>
             {
-                contents.map(content => (
+
+                contents.filter(cntents => cntents.cat_id === currentCat).map(content => (
                     <>
 
                         <div className="bg-white rounded-lg p-4 space-y-7">
@@ -36,9 +37,16 @@ const MainContent = () => {
                                 <span>{content.dua_id}. {content.dua_name_en}</span>
                             </div>
                             <p className="text-justify">{content.top_en ? content.top_en : ""}</p>
-                            <p className="text-right font-bold text-2xl">{content.dua_arabic ? content.dua_arabic : ""}</p>
-                            <p className="text-justify"><span className="font-bold text-justify">Transliteration: </span>{content.transliteration_en ? content.transliteration_en : ""}</p>
-                            <p className="text-justify">{content.translation_en ? content.translation_en : ""}</p>
+                            <p className="text-right font-medium text-3xl text tracking-wide">{content.clean_arabic ? content.dua_arabic : ""}</p>
+
+                            <p className="text-justify">{content.transliteration_en ? (
+                                <><span className="font-bold">Transliteration: </span>
+                                    {content.transliteration_en}</>
+                            ) : ""}</p>
+                            <p className="text-justify">{content.translation_en ? (
+                                <><span className="font-bold">Translation: </span>
+                                    {content.translation_en}</>
+                            ) : ""}</p>
                             <div>
                                 <p className="text-[#1FA45B] font-medium">Reference:</p>
                                 <p>{content.refference_en}</p>

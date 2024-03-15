@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Categories = () => {
+const Categories = ({catShow}) => {
     const [category, setCategory] = useState([]);
     const [subCategory, setSubCategory] = useState([]);
 
@@ -14,6 +14,8 @@ const Categories = () => {
             .then(res => res.json())
             .then(data => setSubCategory(data))
     }, [])
+
+
 
     return (
         <div className="max-w-96 space-y-3 h-screen overflow-scroll">
