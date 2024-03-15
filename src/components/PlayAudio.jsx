@@ -7,6 +7,7 @@ const PlayAudio = ({ content }) => {
 
 
     const togglePlay = () => {
+        console.log(isPlaying);
         previousRef.current = audioRef.current;
         if (!isPlaying) {
             previousRef.current.pause();

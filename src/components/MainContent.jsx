@@ -20,7 +20,7 @@ const MainContent = ({ currentCat }) => {
         setPlaying(!isPlaying);
     }
     return (
-        <div className="max-w-[650px] space-y-4 overflow-scroll max-h-screen">
+        <div className="lg:w-full 2xl:w-1/2 space-y-4 overflow-scroll max-h-screen">
             <div className="bg-white p-4 font-medium w-full rounded-lg">
                 <p className="w-full"><span className="text-[#1FA45B]">Section</span> The Servant dependent on his lord</p>
             </div>

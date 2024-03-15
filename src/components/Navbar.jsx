@@ -1,9 +1,9 @@
 const Navbar = () => {
     return (
-        <div>
-            <div>
+        <div className="hidden lg:block">
+            <div className="overflow-y-scroll h-screen">
                 {/* first section */}
-                <div className='flex p-4 gap-6 flex-col items-center justify-between bg-white w-24 rounded-xl'>
+                <div className='flex p-4 gap-6 flex-col items-center justify-between bg-white w-24 rounded-xl min-h-[800px]'>
                     <div>
                         <img className='w-16 h-16' src="lgo.png" alt="" />
                     </div>

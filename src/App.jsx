@@ -13,11 +13,11 @@ function App() {
   }
   return (
     <>
-      <div className='container mx-auto flex gap-4 pt-8'>
+      <div className='container mx-auto flex gap-4 pt-8 pb'>
         <Navbar></Navbar>
         <div className='w-full'>
           <TopNav></TopNav>
-          <div className='flex pt-4 gap-8'>
+          <div className='flex flex-col lg:flex-row pt-4 gap-8 px-4 lg:px-0'>
             <Categories catShow={catShow}></Categories>
             <MainContent currentCat={currentCat}></MainContent>
             <Sidebar></Sidebar>
