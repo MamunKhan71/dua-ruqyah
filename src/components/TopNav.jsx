@@ -1,6 +1,6 @@
 const TopNav = () => {
     return (
-        <div className="w-full flex flex-col-reverse lg:flex-row gap-2 lg:gap-0 justify-center lg:justify-between items-end lg:items-center px-4 lg:px-0">
+        <div className="font-inter w-full flex flex-col-reverse lg:flex-row gap-2 lg:gap-0 justify-center lg:justify-between items-end lg:items-center px-4 lg:px-0">
             <h1 className="text-2xl font-medium w-full text-center lg:text-left lg:max-w-96">Duas Page</h1>
             <div className="w-full lg:w-[620px]">
                 <div className="flex justify-end w-full">

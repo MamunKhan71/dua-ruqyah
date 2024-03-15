@@ -1,6 +1,6 @@
 const Sidebar = () => {
     return (
-        <div className="lg:hidden 2xl:flex w-96 rounded-xl  flex-col items-end gap-7">
+        <div className="font-inter lg:hidden 2xl:flex w-96 rounded-xl  flex-col items-end gap-7">
             <div className="bg-white px-5 pt-8 w-full space-y-4 rounded-[32px]">
                 <h1 className="text-center font-bold text-xl">Settings</h1>
                 <div className="flex flex-col gap-4">

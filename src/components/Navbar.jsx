@@ -1,6 +1,6 @@
 const Navbar = () => {
     return (
-        <div className="hidden lg:block">
+        <div className="font-inter hidden lg:block">
             <div className="overflow-y-scroll h-screen">
                 {/* first section */}
                 <div className='flex p-4 gap-6 flex-col items-center justify-between bg-white w-24 rounded-xl min-h-[800px]'>

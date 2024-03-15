@@ -26,7 +26,7 @@ const Categories = ({ catShow }) => {
         }
     }
     return (
-        <div className="max-w-96 space-y-3 bg-white">
+        <div className="max-w-96 space-y-3 bg-white font-inter">
             <div className="bg-[#1FA45B] rounded-t-xl py-4 text-center">
                 <p className="text-white font-semibold">Categories</p>
             </div>
@@ -36,8 +36,8 @@ const Categories = ({ catShow }) => {
                     <input type="text" className="grow" placeholder="Search by Categories" />
                 </label>
             </div>
-            <div className=" h-screen overflow-y-scroll">
-                <div className="bg-white rounded-xl flex flex-col">
+            <div className=" h-dvh overflow-y-scroll font-inter">
+                <div className="bg-white rounded-xl flex flex-col font-inter">
                     <div className="p-4 space-y-4">
 
                         {
