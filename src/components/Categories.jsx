@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Transition } from '@headlessui/react'
 const Categories = ({ catShow }) => {
     const [category, setCategory] = useState([]);
     const [subCategory, setSubCategory] = useState([]);
@@ -15,8 +15,16 @@ const Categories = ({ catShow }) => {
             .then(data => setSubCategory(data))
     }, [])
 
+    const [visibleCat, setVisibleCat] = useState([]);
 
-
+    const toggleCategory = catId => {
+        if (visibleCat === catId) {
+            setVisibleCat(null);
+        } else {
+            catShow(catId);
+            setVisibleCat(catId);
+        }
+    }
     return (
         <div className="max-w-96 space-y-3 bg-white">
             <div className="bg-[#1FA45B] rounded-t-xl py-4 text-center">
@@ -35,7 +43,7 @@ const Categories = ({ catShow }) => {
                         {
                             category.map(cat => (
                                 <>
-                                    <div onClick={() => catShow(cat.cat_id)} className="w-full flex justify-between items-center cursor-pointer bg-[#E8F0F5] p-2 rounded-md">
+                                    <div onClick={() => toggleCategory(cat.cat_id)} className="w-full flex justify-between items-center cursor-pointer bg-[#E8F0F5] p-2 rounded-md min-w-[340px]">
                                         <div className="flex gap-4 items-center justify-start">
                                             <img className="w-12 h-12 p-2 rounded-md bg-gray-200" src="dua.png" alt="" />
                                             <div>
@@ -49,17 +57,28 @@ const Categories = ({ catShow }) => {
                                         </div>
 
                                     </div>
-                                    <div>
-                                        <ul className="list-disc list-inside font-medium">
-                                            {
-                                                subCategory.filter(SubCat => SubCat.cat_id === cat.cat_id).map(gCat => (
-                                                    <>
-                                                        <li>{gCat.subcat_name_en}</li>
-                                                    </>
-                                                ))
-                                            }
-                                        </ul>
-                                    </div>
+                                    {
+                                        <Transition
+                                            show={visibleCat === cat.cat_id}
+                                            enter="transition-all ease-in-out duration-200"
+                                            enterFrom="opacity-0 translate-y-6"
+                                            enterTo="opacity-100 translate-y-0"
+                                            leave="transition-all ease-in-out duration-200"
+                                            leaveFrom="opacity-100"
+                                            leaveTo="opacity-0"
+                                        >
+                                            <div>
+                                                <ul className="list-disc list-inside font-medium">
+                                                    {subCategory
+                                                        .filter(SubCat => SubCat.cat_id === visibleCat)
+                                                        .map(gCat => (
+                                                            <li key={gCat.subcat_id}>{gCat.subcat_name_en}</li>
+                                                        ))}
+                                                </ul>
+                                            </div>
+                                        </Transition>
+                                    }
+                                    
                                 </>
                             ))
                         }
