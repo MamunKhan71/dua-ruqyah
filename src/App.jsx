@@ -14,7 +14,6 @@ function App() {
     setDoa(doa);
   }
 
-
   const catShow = catId => {
     setCurrentCat(catId);
   }
